@@ -1,20 +1,30 @@
 /* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
-    width: 300px;
-    margin: 100px auto;
-    padding: 30px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 350px;
+    padding: 40px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
 h2 {
-    text-align: center;
+    margin-bottom: 25px;
+    color: #bb86fc;
 }
 
 form {
@@ -23,18 +33,41 @@ form {
 }
 
 input {
-    padding: 10px;
-    margin: 5px 0;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    background-color: #2c2c2c;
+    color: #ffffff;
+    outline: none;
+}
+
+input::placeholder {
+    color: #aaaaaa;
 }
 
 button {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
+    padding: 12px;
+    background-color: #bb86fc;
+    color: #1e1e1e;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #9a6dfc;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
