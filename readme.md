@@ -8,3 +8,4 @@ Named after the Destiny 2 raid Last Wish, the idea behind the original program w
 ```
 npm install express --save
 ```
+You should also create a file called ```db.json```, this is where login details are stored.
