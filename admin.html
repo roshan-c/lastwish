@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <a href="admin.html">
+            <img src="logo.png" alt="Logo" class="logo">
+        </a>
+        <div class="navbar-buttons">
+            <button id="logoutBtn">Logout</button>
+            <span id="username" style="color: #fff; margin-left: 10px;">Username</span>
+            <span style="color: #fff; margin-left: 10px;">Points: <span id="userPoints">1000</span></span>
+        </div>
+    </header>
+    <div id="toast-container"></div>
+    <div class="container">
+        <!-- Resolve Prediction Section -->
+        <div class="resolve-prediction">
+            <h2>Resolve Predictions</h2>
+            <div id="expiredPredictions">
+                <!-- Expired predictions will be loaded here dynamically -->
+            </div>
+        </div>
+        <!-- Allocate Points Section -->
+        <div class="allocate-points">
+            <h2>Allocate Points to Users</h2>
+            <form id="allocatePointsForm">
+                <input type="text" id="allocateUsername" placeholder="Username" required>
+                <input type="number" id="allocatePoints" placeholder="Points" required>
+                <button type="submit">Allocate Points</button>
+            </form>
+        </div>
+    </div>
+    <script src="toast.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

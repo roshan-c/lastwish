@@ -1,73 +1,276 @@
 /* styles.css */
+
+/* Importing Font */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
+/* Reset Margin and Padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
 body {
     font-family: 'JetBrains Mono', monospace;
     background-color: #121212;
     color: #ffffff;
-    margin: 0;
-    padding: 0;
     display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.container {
-    width: 350px;
-    padding: 40px;
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: #1e1e1e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px; /* Reduced padding for smaller navbar */
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 50px; /* Set a fixed height for the navbar */
+}
+
+/* Logo Styles */
+.logo {
+    height: 30px; /* Reduced logo height */
+}
+
+/* Navbar Buttons Container */
+.navbar-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Reduced gap between buttons */
+}
+
+/* Navbar Buttons */
+.navbar-buttons button {
+    padding: 6px 12px; /* Reduced padding for buttons */
+    background-color: #bb86fc;
+    color: #1e1e1e;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 0.9rem; /* Reduced font size */
+}
+
+.navbar-buttons button:hover {
+    background-color: #9a6dfc;
+}
+
+/* Main Content Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 60px auto 20px auto; /* Adjusted top margin for smaller navbar height */
+    flex: 1;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Section Styles */
+section {
+    width: 100%;
+    max-width: 800px;
+    background-color: #1e1e1e;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
+/* Heading Styles */
 h2 {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     color: #bb86fc;
+    text-align: left;
 }
 
+/* Form Styles */
 form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
+/* Input Styles */
 input {
     padding: 12px;
-    margin: 8px 0;
     border: 1px solid #333333;
     border-radius: 4px;
     background-color: #2c2c2c;
     color: #ffffff;
-    outline: none;
 }
 
 input::placeholder {
     color: #aaaaaa;
 }
 
-button {
+/* Submit Button Styles */
+button[type="submit"], .prediction button, .active-predictions button {
     padding: 12px;
     background-color: #bb86fc;
     color: #1e1e1e;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-weight: bold;
     transition: background-color 0.3s;
+    font-size: 1rem;
 }
 
-button:hover {
+button[type="submit"]:hover, .prediction button:hover, .active-predictions button:hover {
     background-color: #9a6dfc;
 }
 
+/* Prediction Container Styles */
+.prediction {
+    background-color: #3a3a3a;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.prediction p {
+    color: #ffeb3b;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Outcome Container Styles */
+.outcome-container {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.vote-points {
+    width: 100px;
+    margin-right: 10px;
+}
+
+/* Timer Styles */
+.timer {
+    font-size: 0.9rem;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+/* Toast Styles */
+#toast-container {
+    position: fixed;
+    top: 70px; /* Adjusted to stay below the navbar */
+    right: 20px;
+    z-index: 1001;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    background-color: #333333;
+    border-radius: 4px;
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: fadeIn 0.5s forwards, fadeOut 0.5s forwards 2.5s;
+    transition: all 0.3s ease;
+}
+
+.toast.success {
+    background-color: #4caf50;
+}
+
+.toast.error {
+    background-color: #f44336;
+}
+
+.toast-icon {
+    margin-right: 10px;
+}
+
+/* Toast Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Link Styles */
 a {
     display: block;
     margin-top: 20px;
     color: #bb86fc;
     text-decoration: none;
+    text-align: left;
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Allocate Points Button Styles */
+.allocate-points button[type="submit"] {
+    padding: 12px;
+    background-color: #ff9800;
+    color: #1e1e1e;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+.allocate-points button[type="submit"]:hover {
+    background-color: #e68900;
+}
+
+/* Responsive Navbar */
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    section {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+        height: auto; /* Allow height to adjust based on content */
+    }
+    .navbar-buttons {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+    .navbar-buttons button {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 5px;
+        padding: 8px 14px;
+        font-size: 1rem;
+    }
+    .container {
+        width: 90%;
+        margin: 100px auto 20px auto;
+    }
 }
