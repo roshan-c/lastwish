@@ -1,0 +1,123 @@
+{
+  "users": [
+    {
+      "username": "roshadmin",
+      "password": "$2b$10$a65OQk/pYmhYTPtE1cMGhOR.Sbb9w1brhbxYFcdMxLABttV51EFse",
+      "points": 1000,
+      "role": "admin"
+    },
+    {
+      "username": "gart",
+      "password": "$2b$10$/9P0/AffXOwE90igM0/kyuUfJDvPDvEYx0z5K/Md6jK3G/QTB1j0m",
+      "points": 1500,
+      "role": "user"
+    },
+    {
+      "username": "shanelle",
+      "password": "$2b$10$iVu8UH.nKcpI1wLiargbBOx6LvS1XMDeJatKR5wueA9iERmqf3fC.",
+      "points": 500,
+      "role": "user"
+    }
+  ],
+  "predictions": [
+    {
+      "id": 1731684492809,
+      "description": "this must work now",
+      "outcomes": [
+        {
+          "id": 1,
+          "name": "yes",
+          "votes": 1,
+          "points": 500
+        },
+        {
+          "id": 2,
+          "name": "no",
+          "votes": 1,
+          "points": 500
+        }
+      ],
+      "createdAt": 1731684492809,
+      "expiresAt": 1731684552809,
+      "allocations": [
+        {
+          "username": "gart",
+          "outcomeId": 1,
+          "points": 500
+        },
+        {
+          "username": "shanelle",
+          "outcomeId": 2,
+          "points": 500
+        }
+      ],
+      "resolved": true
+    },
+    {
+      "id": 1731684669284,
+      "description": "new test",
+      "outcomes": [
+        {
+          "id": 1,
+          "name": "y",
+          "votes": 1,
+          "points": 1000
+        },
+        {
+          "id": 2,
+          "name": "q",
+          "votes": 1,
+          "points": 500
+        }
+      ],
+      "createdAt": 1731684669284,
+      "expiresAt": 1731684729284,
+      "allocations": [
+        {
+          "username": "gart",
+          "outcomeId": 1,
+          "points": 1000
+        },
+        {
+          "username": "shanelle",
+          "outcomeId": 2,
+          "points": 500
+        }
+      ],
+      "resolved": true
+    },
+    {
+      "id": 1731684939524,
+      "description": "please",
+      "outcomes": [
+        {
+          "id": 1,
+          "name": "yes",
+          "votes": 1,
+          "points": 500
+        },
+        {
+          "id": 2,
+          "name": "no",
+          "votes": 1,
+          "points": 500
+        }
+      ],
+      "createdAt": 1731684939524,
+      "expiresAt": 1731684999524,
+      "allocations": [
+        {
+          "username": "gart",
+          "outcomeId": 1,
+          "points": 500
+        },
+        {
+          "username": "shanelle",
+          "outcomeId": 2,
+          "points": 500
+        }
+      ],
+      "resolved": true
+    }
+  ]
+}
