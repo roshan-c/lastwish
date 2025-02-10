@@ -6,13 +6,96 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <a href="#" data-page="home">
+            <img src="logo.png" alt="Logo" class="logo">
+        </a>
+        <div class="navbar-buttons">
+            <button id="viewExpiredBtn" style="display: none;">View Expired Predictions</button>
+            <button id="logoutBtn" style="display: none;">Logout</button>
+            <span id="username" style="color: #fff; margin-left: 10px; display: none;">Username</span>
+            <span id="userPoints" style="color: #fff; margin-left: 10px; display: none;">Points: 1000</span>
+        </div>
+    </header>
+
     <div id="toast-container"></div>
+
+    <!-- Main Content Container -->
     <div class="container">
-        <h2>Welcome to Last Wish Betting</h2>
-        <a href="signup.html">Sign Up</a>
-        <a href="login.html">Login</a>
+        <!-- Welcome Page -->
+        <div id="welcomePage" class="page">
+            <h2>Welcome to Last Wish Betting</h2>
+            <button onclick="showPage('signup')">Sign Up</button>
+            <button onclick="showPage('login')">Login</button>
+        </div>
+
+        <!-- Login Page -->
+        <div id="loginPage" class="page" style="display: none;">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="text" id="loginUsername" placeholder="Username" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <a href="#" onclick="showPage('signup')">Sign Up</a>
+        </div>
+
+        <!-- Signup Page -->
+        <div id="signupPage" class="page" style="display: none;">
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <input type="text" id="signupUsername" placeholder="Username" required>
+                <input type="password" id="signupPassword" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <a href="#" onclick="showPage('welcome')">Back to Home</a>
+        </div>
+
+        <!-- Home Page -->
+        <div id="homePage" class="page" style="display: none;">
+            <div class="create-prediction">
+                <h2>Create a New Prediction</h2>
+                <form id="predictionForm">
+                    <input type="text" id="predictionDescription" placeholder="Prediction Description" required>
+                    <input type="number" id="expiresIn" placeholder="Expires in Minutes" required>
+                    <div id="outcomes">
+                        <input type="text" class="outcome" placeholder="Outcome 1" required>
+                        <input type="text" class="outcome" placeholder="Outcome 2" required>
+                    </div>
+                    <button type="submit">Create Prediction</button>
+                </form>
+            </div>
+            <div class="active-predictions">
+                <h2>Active Predictions</h2>
+                <div id="activePredictions"></div>
+            </div>
+        </div>
+
+        <!-- Admin Page -->
+        <div id="adminPage" class="page" style="display: none;">
+            <div class="resolve-prediction">
+                <h2>Resolve Predictions</h2>
+                <div id="expiredPredictions"></div>
+            </div>
+            <div class="allocate-points">
+                <h2>Allocate Points to Users</h2>
+                <form id="allocatePointsForm">
+                    <input type="text" id="allocateUsername" placeholder="Username" required>
+                    <input type="number" id="allocatePoints" placeholder="Points" required>
+                    <button type="submit">Allocate Points</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Expired Predictions Page -->
+        <div id="expiredPage" class="page" style="display: none;">
+            <h2>Expired Predictions</h2>
+            <div id="expiredPredictionsList"></div>
+        </div>
     </div>
+
     <script src="toast.js"></script>
-    <script src="script.js"></script> <!-- Assuming script.js is used here -->
+    <script src="script.js"></script>
 </body>
 </html>

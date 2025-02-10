@@ -17,6 +17,12 @@
       "password": "$2b$10$iVu8UH.nKcpI1wLiargbBOx6LvS1XMDeJatKR5wueA9iERmqf3fC.",
       "points": 500,
       "role": "user"
+    },
+    {
+      "username": "agent",
+      "password": "$2b$10$jx.n06tWNHklbw4M/jCgqOmNLpvK.t9lmiK4lgO39u7xlntlJ/6hS",
+      "points": 1000,
+      "role": "user"
     }
   ],
   "predictions": [
